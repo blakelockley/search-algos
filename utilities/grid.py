@@ -78,4 +78,24 @@ def show_path(start, end, blocks=[], path=[], attempted=[], side=20, \
     data[y][x] = hex_to_rgb(end_colour)
 
     show_grid(data, path, side=side)
+
+
+def show_graph(edges, start=None, end=None, path=None, side=20, \
+    background_colour="#FFF9F0", node_colour="#00FF00", start_colour="#FC5C65", end_colour="#45AAF2"):
+
+    data = [[hex_to_rgb(background_colour)] * side for _ in range(side)]
+
+    for edge in edges:
+        x, y = edge.pos
+        data[y][x] = hex_to_rgb(node_colour)
+
+    if start:
+        x, y = start
+        data[y][x] = hex_to_rgb(start_colour)
     
+    if end:
+        x, y = end
+        data[y][x] = hex_to_rgb(end_colour)
+
+    show_grid(data, path, side=side)
+
