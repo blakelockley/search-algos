@@ -1,4 +1,4 @@
-#Various CS#
+# Various CS #
 
 Computer Science concepts that are vital for any engineer to know. 
 
